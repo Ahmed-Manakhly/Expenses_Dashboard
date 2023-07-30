@@ -1,0 +1,46 @@
+
+@use '../../scss/index.scss'  as *;
+@use '../../scss/mixins' as * ;
+//-----------------------------
+
+.expenses-filter {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    padding: 1rem;
+    text-align: center;
+    gap: 1rem;
+    font-size: small;
+    @include mobile {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .expenses-filter__control {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: fit-content;
+        label {
+            width: 100%;
+            font-weight: bold;
+            margin-bottom: 0.2rem;
+        }
+        
+        select {
+            cursor: pointer;
+            font-weight: bold;
+            font: inherit;
+            min-width: 12rem;
+            padding: 0.5rem 2.5rem;
+            border-radius: 6px;
+            -webkit-border-radius: 6px;
+            -moz-border-radius: 6px;
+            -ms-border-radius: 6px;
+            -o-border-radius: 6px;
+            box-shadow:  -10px 0 20px -7px rgba(115,115,115,0.75);
+            border: transparent;
+        }
+    }
+}
+

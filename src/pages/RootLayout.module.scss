@@ -1,0 +1,43 @@
+@use '../scss//index.scss' as * ;
+@use '../scss/mixins' as *;
+
+
+.page{
+    margin-top: 65px;
+    background-color:  #f6f6f6f6 ;
+    .content {
+        font-size: smaller;
+        h1 {
+            position: relative;
+            margin: 20px 20px 40px ;
+            &::before{
+                @extend %pseudo;
+                background-color: white;
+                width: 120px;
+                @extend %rounded;
+            }
+            &::after{
+                @extend %pseudo;
+                background-color: var(--blue-color);
+                width: 40px;
+                @extend %rounded;
+            }
+        }
+    }
+}
+
+%pseudo {
+    content: '';
+    position: absolute;
+    height: 3px;
+    bottom: -10px;
+    left: 0 ;
+}
+
+%rounded{ 
+    border-radius: 6px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    -o-border-radius: 6px;
+}

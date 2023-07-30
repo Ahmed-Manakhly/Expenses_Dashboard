@@ -1,0 +1,150 @@
+@use '../../scss/index.scss'  as *;
+@use '../../scss/mixins' as * ;
+//-----------------------------
+.records{
+    //------------------------------------------------
+    .tools{
+        box-shadow: 0 10px 20px -5px rgba(115,115,115,0.75);
+        margin-bottom: 13px ;
+        padding: 12px ;
+        @extend %rad-6 ;
+        overflow: hidden;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        @include mobile {
+            flex-direction: column;
+        }
+        .icons{
+            border-top: 5px var(--blue-alt-color) solid;
+            display: flex;
+            flex-direction: row;
+            gap : 12px ;
+            button {
+                background-color: transparent;
+                border-color: transparent;
+                margin: auto;
+                box-shadow:  -10px 0 20px -7px rgba(115,115,115,0.75);
+                @extend %rad-6 ;
+                .remove {
+                    color: var(--red-color);
+                }
+                .edit {
+                    color: var(--orange-color);
+                }
+                .update {
+                    color: var(--green-color);
+                }
+            }
+        }
+    }
+    & .tableDate{
+        overflow-x: auto;
+        box-shadow: 0 10px 20px -5px rgba(115,115,115,0.75);
+        border-radius: 15px;
+        -webkit-border-radius: 15px;
+        -moz-border-radius: 15px;
+        -ms-border-radius: 15px;
+        -o-border-radius: 15px;
+        & .table{
+            min-width: 1000px;
+            border-spacing: 0;
+            overflow: hidden;
+            border-radius: 15px;
+            -webkit-border-radius: 15px;
+            -moz-border-radius: 15px;
+            -ms-border-radius: 15px;
+            -o-border-radius: 15px;
+            tr {
+                cursor: pointer;
+                @extend %tran ;
+                &:hover  ,&.dark:hover {
+                    background-color: var(--green-color) ;
+                    color: white ;
+                    font-weight: bold;
+                }
+                &.dark {
+                    background-color: #eee;
+                }
+                input[type='radio'] {
+                    cursor: pointer;
+                }
+                & td:last-child {
+                    border-right: #eee 2px solid;
+                }
+            }
+            th {
+                background-color: var(--blue-alt-color);
+                font-weight: bold;
+                padding: 6px;
+                border-left: #eee 2px solid;
+                color: #eee;
+                @extend %tran ;
+                &:hover {
+                    color: var(--orange-color) ;
+                    background-color: var(--blue-color);
+                }
+                .loadingActions ,.loadingActions:hover{
+                    width: 100%;
+                    overflow: hidden;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    @include mobile {
+                        flex-direction: column;
+                    }
+                    align-items: center;
+                    .actions{
+                        width: 50%;
+                        gap: 3;
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: flex-start;
+                        button {
+                            width: 30%;
+                            border: #eee 1px solid;
+                        }
+                        @include mobile {
+                            flex-direction: column;
+                        }
+                        align-items: center;
+                    }
+                    span {
+                        padding-right: 14px;
+                        font-style: italic;
+                        word-spacing: 4px;
+                        .count{padding-right: 0;}
+                        .total{padding-right: 0}
+                    }
+                }
+            }
+            td {
+                padding: 6px;
+                border-bottom: #eee 2px solid;
+                border-left: #eee 2px solid;
+            }
+        }
+    }
+}
+
+%tran {
+    transition: 00.3s;
+    -webkit-transition: 00.3s;
+    -moz-transition: 00.3s;
+    -ms-transition: 00.3s;
+    -o-transition: 00.3s;
+}
+
+%rad-6 {
+    border-radius: 16px;
+    -webkit-border-radius: 16px;
+    -moz-border-radius: 16px;
+    -ms-border-radius: 16px;
+    -o-border-radius: 16px;
+}
+
+
+.fallBack {
+    background-color: #ddd;
+    color: var(--red-color);
+}

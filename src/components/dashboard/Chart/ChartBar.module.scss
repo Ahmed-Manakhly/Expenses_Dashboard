@@ -1,0 +1,61 @@
+@use '../../../scss/index.scss'  as *;
+@use '../../../scss/mixins' as * ;
+//-------------------------
+
+
+.chart-bar {
+    height: 250px;
+    min-width: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 5px;
+    .chart-bar__label {
+        font-weight: bold;
+        font-size: 0.5rem;
+        text-align: center;
+        min-width: 40px;
+    }
+    .chart-bar__inner {
+        height: 100%;
+        width: 100%;
+        border: 1px solid #eee;
+        border-radius: 7px 7px 0 0;
+        background-color: var(--gray-color);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        position: relative;
+        @extend %rad  ;
+        &::before{
+            content: attr(con);
+            position: absolute;
+            top: -15px;
+            left: 0;
+            font-size: smaller;
+            color: var(--blue-color);
+            border: none;
+        }
+        .chart-bar__fill {
+            background-color: var(--blue-color);
+            width: 100%;
+            transition: all 0.3s ease-out;
+            @extend %rad  ;
+        }
+    }
+}
+
+%rad {
+    border-radius: 7px 7px 0 0;
+    -webkit-border-radius: 7px 7px 0 0;
+    -moz-border-radius: 7px 7px 0 0;
+    -ms-border-radius: 7px 7px 0 0;
+    -o-border-radius: 7px 7px 0 0;
+}
+
+
+
+
+
+
+

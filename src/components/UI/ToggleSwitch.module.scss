@@ -1,0 +1,80 @@
+@use '../../scss/index' as * ;
+@use '../../scss/mixins' as *;
+
+.ToggleSwitch {
+    input {
+        -webkit-appearance: none;
+        appearance: none;
+        &:checked + div {
+            background-color: var(--blue-color);
+        }
+        appearance: none;
+        &:checked + div {
+            .circle {
+                left: 60%;
+                color: var(--blue-color);
+                .on {
+                    display: block;
+                }
+                .off {
+                    display: none;
+                }
+            }
+        }
+    }
+    div {
+        background-color: #ccc;
+        width: 68px;
+        height: 32px;
+        @extend %rad ;
+        @extend %tran ;
+        position: relative;
+        cursor: pointer;
+        .circle {
+            font-weight: 900;
+            background-color: white;
+            width: 24px;
+            height: 24px;
+            position: absolute;
+            @extend %rad50 ;
+            top : 4px;
+            left: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #aaa;
+            @extend %tran ;
+            .on {
+                display: none;
+            }
+            .off {
+                display: block;
+            }
+        }
+    }
+}
+
+
+
+%rad {
+    border-radius: 16px;
+    -webkit-border-radius: 16px;
+    -moz-border-radius: 16px;
+    -ms-border-radius: 16px;
+    -o-border-radius: 16px;
+}
+%rad50 {
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+%tran {
+    transition: 0.3s;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -o-transition: 0.3s;
+}

@@ -1,0 +1,18 @@
+
+//----------------- colors
+$blue :#0075ff ;
+$blue-alt : #0d69d5 ;
+$orange: #f59e0d ;
+$green: #22c55e ;
+$red: #f44336 ;
+$gray: #888 ;
+
+$colors : ( 'blue' : $blue , 'blue-alt' : $blue-alt , 'orange' : $orange ,'green' : $green, 'red': $red, 'gray' :$gray) ;
+:root{
+    @each $key , $val in $colors {
+        --#{$key}#{'-color'}: #{$val};
+    }
+}
+//------------------------------ media size
+$mobile-width: 767px;
+$tablet-width: 1366px;

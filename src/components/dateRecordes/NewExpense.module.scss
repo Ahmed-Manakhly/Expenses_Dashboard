@@ -1,0 +1,40 @@
+@use '../../scss/index.scss'  as *;
+@use '../../scss/mixins' as * ;
+
+.new-expense {
+    box-shadow: 0 10px 20px -5px rgba(115,115,115,0.75);
+    .start {
+        max-height: 360px;
+        flex-direction: column;
+        & button {
+            display: block;
+            font-size: 14px;
+            @extend%tran;
+            background-color: var(--blue-color);
+            color: white;
+            width: fit-content;
+            margin: auto;
+            border: none ;
+            @extend %btn__shape;
+            &:hover {
+                background-color: var(--blue-alt-color);
+            }
+        }
+        h2 {
+            color: var(--blue-alt-color);
+        }
+        .img {
+            width: 350px;
+            height: 350px;
+        }
+    }
+    text-align: center;
+}
+
+%tran {
+    transition: 00.3s;
+    -webkit-transition: 00.3s;
+    -moz-transition: 00.3s;
+    -ms-transition: 00.3s;
+    -o-transition: 00.3s;
+}

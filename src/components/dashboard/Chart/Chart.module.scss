@@ -1,0 +1,18 @@
+@use '../../../scss/index.scss'  as *;
+@use '../../../scss/mixins' as * ;
+//-------------------------
+.charts{
+
+    box-shadow: 0 10px 20px -5px rgba(115,115,115,0.75);
+    .chart {
+        overflow-x: auto;
+        min-width: 450px;
+        padding: 1rem;
+        border-radius: 12px;
+        background-color: #eee;
+        text-align: center;
+        display: flex;
+        justify-content: space-around;
+        box-shadow: 0 10px 20px -5px rgba(115,115,115,0.75);
+    }
+}

@@ -1,0 +1,37 @@
+@use '../scss//index.scss' as * ;
+@use '../scss/mixins' as *;
+
+.wrapper{
+    grid-template-columns: repeat(auto-fill,minmax(450px,1fr));
+    margin : {
+        left: 20px;
+        right: 20px;
+    }
+    @include mobile {
+        grid-template-columns:  minmax(200px,1fr);
+        margin : {
+            left: 10px;
+            right: 10px;
+            gap: 10px;
+        }
+    }
+}
+
+.Summary {
+    font-size: smaller;
+    grid-template-columns: repeat(auto-fill,minmax(600px,1fr));
+    margin : {
+        left: 20px;
+        right: 20px;
+        top: 20px;
+    }
+    @include mobile {
+        grid-template-columns:  minmax(200px,1fr);
+        margin : {
+            left: 10px;
+            right: 10px;
+            gap: 10px;
+            top: 20px;
+        }
+    }
+}

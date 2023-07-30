@@ -1,0 +1,40 @@
+@use '../scss//index.scss' as * ;
+@use '../scss/mixins'  as *;
+.errorPage{
+    // min-height: 100vh;
+    display: flex;
+    align-items: center;
+    h1 {
+        margin-bottom: 400px;
+    }
+}
+
+.text-error {
+    text-align: center;
+    margin: auto;
+    font-weight: bold;
+    font-size: larger;
+    color:#f03333 ;
+    animation: warning 1.2s linear infinite;
+    -webkit-animation: warning 600ms linear infinite ;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+@keyframes warning {
+    0% {
+        opacity: 100%;
+        transform: rotateX(1.2);
+        -webkit-transform: rotateX(1.2);
+        -moz-transform: rotateX(1.2);
+        -ms-transform: rotateX(1.2);
+        -o-transform: rotateX(1.2);
+}
+    100% {
+        opacity: 0%;
+        transform: rotateX(0.93);
+        -webkit-transform: rotateX(0.93);
+        -moz-transform: rotateX(0.93);
+        -ms-transform: rotateX(0.93);
+        -o-transform: rotateX(0.93);
+}
+}

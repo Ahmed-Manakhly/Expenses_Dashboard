@@ -1,0 +1,40 @@
+@use '../../scss/index.scss'  as *;
+@use '../../scss/mixins' as * ;
+
+
+.welcome{
+    box-shadow: 0 10px 20px -5px rgba(115,115,115,0.75);
+    .intro{
+        border-bottom: 3px solid var(--blue-alt-color);
+        @include mobile {
+            padding-bottom: 30px ;
+        } ;
+        .welcome_img{
+            width: 200px;
+            margin-bottom: -9px;
+        }
+    }
+    .profile_img{
+        width: 75px;
+        height: 75px;
+        @extend %ROUND ;
+        border: 3px solid var(--blue-alt-color);
+        padding: 3px;
+        background-color: white;
+        box-shadow: 0 0 5px #ddd;
+        margin-left: 20px;
+        margin-top: -32px;
+        @include mobile {
+            margin-left: 0 ;
+        } ;
+    }
+}
+
+%ROUND {
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+

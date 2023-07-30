@@ -1,0 +1,280 @@
+@use './mixins' as *;
+@use './variables' as *;
+@import url('https://fonts.googleapis.com/css2?family=Delicious+Handrawn&family=Dosis:wght@200;300;400;500;700;800&family=Kablammo&family=Mochiy+Pop+One&family=Open+Sans:wght@300;400;500;600;700;800&family=Oswald:wght@200;300;400;500;600;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,900&family=Roboto+Slab:wght@100;200;300;400;500;600;700;800&family=Roboto:ital,wght@0,100;0,300;1,100&family=Tilt+Prism&display=swap');
+
+*{
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Delicious Handrawn', cursive;
+  font-family: 'Dosis', sans-serif;
+  font-family: 'Kablammo', cursive;
+  font-family: 'Mochiy Pop One', sans-serif;
+  font-family: 'Oswald', sans-serif;
+  font-family: 'Roboto Slab', serif;
+  font-family: 'Tilt Prism', cursive;
+  font-family: 'Roboto', sans-serif;
+  font-family: 'Poppins', sans-serif;
+  font-family: 'Open Sans', sans-serif;
+}
+
+*:focus {
+  outline: none;
+}
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+::-webkit-scrollbar{
+  width: 15px;
+}
+::-webkit-scrollbar-track{
+  background-color: white;
+}
+::-webkit-scrollbar-thumb{
+  background-color: var(--blue-color);
+}
+::-webkit-scrollbar-thumb:hover{
+  background-color: var(--blue-alt-color);
+}
+//----------------------------------------------------------------- classes
+.d__flex {
+  display: flex;
+}
+
+.align__center {
+  align-items: center;
+}
+.between__flex{
+  @include between__flex ;
+}
+
+.between__flex__start {
+  @include between__flex__start ;
+}
+
+.center__flex{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.start__flex{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.d__block{
+  display: block;
+}
+
+.f__wrap {
+  flex-wrap: wrap;
+}
+//------------------------------ padding
+.p__10{
+  padding: 10px;
+}
+.p__20 {
+  padding: 20px;
+}
+.p__15 {
+  padding: 15px;
+}
+
+//-------------------------- margins
+.m__0{
+  margin: 0;
+}
+.m__20 {
+  margin: 20px;
+}
+.mt__0{
+  margin-top: 0;
+}
+.mt__5{
+  margin-top: 5px;
+}
+.mt__10{
+  margin-top: 10px;
+}
+.mt__20{
+  margin-top: 20px;
+}
+
+.mb__10{
+  margin-bottom: 10px;
+}
+
+.mb__20{
+  margin-bottom: 20px;
+}
+
+.ml__20 {
+  margin-left: 20px;
+}
+//------------------------------------------------- colors
+.bg__white {
+  background-color: white;
+}
+.c__black{
+  color: black;
+}
+.c__white{
+  color: white;
+}
+.bg__eee{
+  background-color: #eee;
+}
+
+
+.c__gray{
+  color: var(--gray-color);
+}
+.bg__blue {
+  background-color: var(--blue-color);
+}
+
+
+.c__blue {
+  color : var(--blue-color); ;
+}
+
+.c__orange {
+  color: var(--orange-color);
+}
+.c__red {
+  color: var(--red-color);
+}
+.c__green {
+  color: var(--green-color);
+}
+//---------------------------------------- positions
+.p__relative {
+  position: relative;
+}
+
+//-----------------------------------txt
+
+.txt__c {
+  text-align: center;
+}
+.txt__c__mobile {
+  @include mobile {
+
+    text-align: center;
+  }
+}
+
+.fs__13 {
+  font-size: 14px;
+} 
+.fs__14 {
+  font-size: 14px;
+} 
+.fs__15 {
+  font-size: 15px;
+} 
+
+.fw__blod {
+  font-weight: bold;
+}
+
+
+
+//--------------------------------------
+.rad__6 {
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+} 
+.rad__10 {
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+} 
+.rad__50 {
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+} 
+//----------------------------------
+.tran{
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+}
+.hide_in_mobile {
+  @include mobile {
+    display: none;
+  }
+}
+//-------------------width
+.w__full {
+  width: 100%;
+}
+.w__fit {
+  width: fit-content;
+}
+
+//--------------------
+.ovh {
+  overflow: hidden;
+}
+//---------- border
+.b__border {
+  border: 1px solid #ccc;
+}
+//------------------------ grid
+.d__grid{
+  display: grid;
+} 
+.gap__20{
+  gap: 20px;
+}
+.gap__10{
+  gap: 10px;
+}
+//-------------------------------
+.txt_c_mobile{
+  @include mobile {
+    text-align: center;
+  }
+} 
+.block__mobile {
+  @include mobile {
+    display: block;
+  }
+}
+
+//-------------------------
+%btn__shape {
+  padding: 4px 10px ;
+  border-radius: 6px ;
+  -webkit-border-radius: 6px ;
+  -moz-border-radius: 6px ;
+  -ms-border-radius: 6px ;
+  -o-border-radius: 6px ;
+}
+
+
+
+
+
+
+

@@ -1,0 +1,81 @@
+@use '../../scss/index.scss'  as *;
+@use '../../scss/mixins' as * ;
+
+.header {
+    position: fixed;
+    top: 0;
+    width: 100% ;
+    z-index: 100;
+    height: 65px ;
+    box-shadow:  -10px 0 20px -7px rgba(115,115,115,0.75);
+    @include between__flex;
+    .search{
+        span{
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            @extend %center_v ;
+            font-size: 14px;
+            color: var(--gray-color);
+            cursor: pointer;
+        }
+        input{
+            font-size: smaller;
+            box-shadow:  -10px 0 20px -7px rgba(115,115,115,0.75) ,inset 0 10px 20px -5px #ddd,
+            inset 10px 0 20px -5px #ddd ;
+            border: 4px solid white ;
+            background-color: #eee ;
+            padding-left: 50px;
+            width: 195px;
+            &:focus {
+                width: 220px;
+                &::placeholder {
+                    opacity: 0;
+                }
+            }
+        }
+    }
+    .icons {
+        .notification {
+            &::before{
+                content: '';
+                position: absolute;
+                width: 10px;
+                height: 10px;
+                background-color: var(--red-color);
+                @extend %ROUND ;
+                right: -5px;
+                top : -5px ;
+            }
+            cursor: pointer ;
+        }
+        img{
+            width: 32px;
+            height: 32px;
+            margin-left: 15px;
+            @extend %ROUND ;
+            box-shadow: 10px 0 20px -5px rgba(115,115,115,0.75);
+            cursor: pointer;
+        }
+    }
+}
+
+
+
+%center_v {
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+}
+
+%ROUND {
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}

@@ -1,0 +1,46 @@
+@use '../../scss/index.scss'  as *;
+@use '../../scss/mixins' as * ;
+
+.info{
+    margin: 15px;
+    @include mobile {
+        display: block;
+        & > div :not(:last-child){
+            margin-bottom: 2px;
+        }
+    }
+    border-top: 3px solid #eee;
+    border-bottom: 3px solid #eee;
+    box-shadow:  0 1px 20px -5px rgba(115,115,115,0.75);
+    & > div{
+        flex: 1;
+    }
+
+}
+
+.profile-btn{
+    a{
+        display: block;
+        font-size: 14px;
+        @extend%tran;
+        background-color: var(--blue-color);
+        color: white;
+        width: fit-content;
+        margin: 0 15px 15px auto;
+        @extend %btn__shape;
+        &:hover {
+            background-color: var(--blue-alt-color);
+        }
+    }
+}
+
+
+
+
+%tran {
+    transition: 00.3s;
+    -webkit-transition: 00.3s;
+    -moz-transition: 00.3s;
+    -ms-transition: 00.3s;
+    -o-transition: 00.3s;
+}
